@@ -9,11 +9,8 @@
       %header#main-header
         = render 'header'
 
-      %main.container
-        = render 'side_navigation'
-
-        %section.main-section
-          = yield
+      %main#main-container
+        = yield
 
     %footer#main-footer
       .wrapper

@@ -1,0 +1,39 @@
+%section
+  %h1 Awesome Product:
+
+  %span Price: $1,000.00
+
+  %strong Contents:
+  %p Contiene waka
+
+  = form_tag purchases_path, id: 'payment-form' do
+
+    %label Name on Credit Card:
+    = text_field_tag 'billing_address[name]', '', data: { stripe: 'name' }
+
+    %label Credit Card Number:
+    = text_field_tag 'number', '', data: { stripe: 'number' }
+
+    %label Security Code
+    = text_field_tag 'cvc', '', data: { stripe: 'cvc' }
+
+    %label Expiration Date:
+    = select_month Date.today,
+      { add_month_numbers: true, use_short_month: true },
+      data: { stripe: 'exp-month'}
+    = select_year Date.today,
+      { end_year: 2050 },
+      data: { stripe: 'exp-year' }
+
+    = render 'billing_address_fields'
+
+    = render 'shipping_address_fields'
+
+    = submit_tag 'Purchase', class: 'btn center'
+
+:javascript
+  $(document).ready(function(){
+
+  });
+
+

@@ -1,0 +1,26 @@
+%fieldset#shipping-address
+  %legend
+    Shipping Address
+    %label
+      = check_box_tag 'same_as_billing', false
+      %small ( check if different )
+
+  %label Address Line1:
+  = text_field_tag 'shipping_address[address_line1]', ''
+
+  %label Address Line2:
+  = text_field_tag 'shipping_address[address_line2]', ''
+
+  %label City:
+  = text_field_tag 'shipping_address[address_city]', ''
+
+  %label State:
+  = text_field_tag 'shipping_address[address_state]', ''
+
+  %label Zip:
+  = text_field_tag 'shipping_address[address_zip]', ''
+
+:javascript
+  $(document).ready(function(){
+  });
+
