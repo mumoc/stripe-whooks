@@ -1,0 +1,21 @@
+!!!
+%html
+  %head
+    %title Stripe Test
+    = stylesheet_link_tag 'application', media: 'all'
+    = csrf_meta_tags
+  %body
+    .wrapper
+      %header#main-header
+        = render 'header'
+
+      %main.container
+        = render 'side_navigation'
+
+        %section.main-section
+          = yield
+
+    %footer#main-footer
+      .wrapper
+        = render 'footer'
+
