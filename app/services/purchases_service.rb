@@ -14,6 +14,7 @@ class PurchasesService
         card: card[:stripeToken],
         description: card[:description],
         metadata: {
+          email: card[:email],
           shipping_address: shipping_address
         }
       )

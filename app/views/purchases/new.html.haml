@@ -14,11 +14,13 @@
     -# Reference fields: As this is an example app, these hidden values are just for
     -# show how can we send different values for products (this logic should go
     -# on another place :p)
-
     = hidden_field_tag :amount, 100000
     = hidden_field_tag :description, 'Panda Product'
 
     .card
+      %label Contact Email:
+      = email_field_tag :email, '', placeholder: 'your@email.com'
+
       %label Credit Card Number:
       = text_field_tag 'number', '', data: { stripe: 'number' }
 
