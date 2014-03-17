@@ -9,10 +9,10 @@ class PurchasesService
   def charge
     begin
       charge = Stripe::Charge.create(
-        amount: 100000,
+        amount: card[:amount],
         currency: 'usd',
         card: card[:stripeToken],
-        description: 'Ardusat Kit',
+        description: card[:description],
         metadata: {
           shipping_address: shipping_address
         }
