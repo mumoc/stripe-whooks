@@ -1,23 +1,28 @@
 %fieldset#billing-address
   %legend Billing Address
 
-  %label Address Line1:
-  = text_field_tag 'billing_address[address_line1]', '',
-    data: { stripe: 'address_line1' }
+  .address
+    %label Address Line1:
+    = text_field_tag 'billing_address[address_line1]', '',
+      data: { stripe: 'address_line1' }
+    %br
 
-  %label Address Line2:
-  = text_field_tag 'billing_address[address_line2]', '',
-    data: { stripe: 'address_line2' }
+    %label Address Line2:
+    = text_field_tag 'billing_address[address_line2]', '',
+      data: { stripe: 'address_line2' }
+    %br
 
-  %label City:
-  = text_field_tag 'billing_address[address_city]', '',
-    data: { stripe: 'address_city' }
+    %label City:
+    = text_field_tag 'billing_address[address_city]', '',
+      data: { stripe: 'address_city' }
+    %br
 
-  %label State:
-  = text_field_tag 'billing_address[address_state]', '',
-    data: { stripe: 'address_state' }
+    %label State:
+    = text_field_tag 'billing_address[address_state]', '',
+      data: { stripe: 'address_state' }
+    %br
 
-  %label Zip:
-  = text_field_tag 'billing_address[address_zip]', '',
-    data: { stripe: 'address_zip' }
-
+    %label Zip:
+    = text_field_tag 'billing_address[address_zip]', '',
+      data: { stripe: 'address_zip' }
+    %br

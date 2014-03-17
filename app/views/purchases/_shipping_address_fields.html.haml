@@ -5,20 +5,26 @@
       = check_box_tag 'same_as_billing', false
       %small ( check if different )
 
-  %label Address Line1:
-  = text_field_tag 'shipping_address[address_line1]', ''
+  .address
+    %label Address Line1:
+    = text_field_tag 'shipping_address[address_line1]', ''
+    %br
 
-  %label Address Line2:
-  = text_field_tag 'shipping_address[address_line2]', ''
+    %label Address Line2:
+    = text_field_tag 'shipping_address[address_line2]', ''
+    %br
 
-  %label City:
-  = text_field_tag 'shipping_address[address_city]', ''
+    %label City:
+    = text_field_tag 'shipping_address[address_city]', ''
+    %br
 
-  %label State:
-  = text_field_tag 'shipping_address[address_state]', ''
+    %label State:
+    = text_field_tag 'shipping_address[address_state]', ''
+    %br
 
-  %label Zip:
-  = text_field_tag 'shipping_address[address_zip]', ''
+    %label Zip:
+    = text_field_tag 'shipping_address[address_zip]', ''
+    %br
 
 - content_for :scripts do
   :javascript

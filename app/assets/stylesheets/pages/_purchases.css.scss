@@ -1,0 +1,21 @@
+fieldset {
+  display: inline;
+  width: 450px;
+}
+
+.same-as-billing {
+  border: none;
+  border-top: 1px solid $green-txt;
+  .address { visibility: hidden }
+}
+
+.address, .card {
+  text-align: right;
+  width: 350px;
+}
+
+.payment-errors {
+  background-color: $orange-bg;
+  color: $white-txt;
+  padding: 5px;
+}

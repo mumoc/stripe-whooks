@@ -1,9 +1,13 @@
 %section
-  %h1 Awesome Product:
+  %h1 Panda Product:
 
   %h2 Price: $1,000.00
 
-  %b Contents:
+  %div
+    %strong Contents:
+    %ul
+      %li Awesomeness
+      %li Attractiveness
 
 
   = form_tag purchases_path, id: 'payment-form' do
@@ -12,24 +16,25 @@
     -# on another place :p)
 
     = hidden_field_tag :amount, 100000
-    = hidden_field_tag :description, 'Awesome Product'
+    = hidden_field_tag :description, 'Panda Product'
 
-    %label Name on Credit Card:
-    = text_field_tag 'billing_address[name]', '', data: { stripe: 'name' }
+    .card
+      %label Credit Card Number:
+      = text_field_tag 'number', '', data: { stripe: 'number' }
 
-    %label Credit Card Number:
-    = text_field_tag 'number', '', data: { stripe: 'number' }
+      %label Name on Credit Card:
+      = text_field_tag 'billing_address[name]', '', data: { stripe: 'name' }
 
-    %label Security Code
-    = text_field_tag 'cvc', '', data: { stripe: 'cvc' }
+      %label Security Code
+      = text_field_tag 'cvc', '', data: { stripe: 'cvc' }
 
-    %label Expiration Date:
-    = select_month Date.today,
-      { add_month_numbers: true, use_short_month: true },
-      data: { stripe: 'exp-month'}
-    = select_year Date.today,
-      { end_year: 2050 },
-      data: { stripe: 'exp-year' }
+      %label Expiration Date:
+      = select_month Date.today,
+        { add_month_numbers: true, use_short_month: true },
+        data: { stripe: 'exp-month'}
+      = select_year Date.today,
+        { end_year: 2050 },
+        data: { stripe: 'exp-year' }
 
     = render 'billing_address_fields'
 
