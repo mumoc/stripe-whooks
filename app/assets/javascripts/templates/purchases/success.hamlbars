@@ -1,0 +1,21 @@
+.succeeded-purchase
+  %p
+    Thanks for buying.
+    %br
+    We've emailed you a receipt.
+
+  %ul
+    %li
+      %b Name:
+      {{card.name}}
+    %li
+      %b Credit Card:
+      {{ card.type }} XXX-XXX-XXX-{{ card.last4 }}
+    %li
+      %b Purchase:
+      {{ description }}
+    %li
+      %b Total:
+      ${{ amount }}
+
+

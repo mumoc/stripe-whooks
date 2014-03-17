@@ -3,8 +3,8 @@
 
   %span Price: $1,000.00
 
-  %strong Contents:
-  %p Contiene waka
+  %b Contents:
+  %p#description Contiene waka
 
   = form_tag purchases_path, id: 'payment-form' do
 
@@ -31,9 +31,12 @@
 
     = submit_tag 'Purchase', class: 'btn center'
 
-:javascript
-  $(document).ready(function(){
-
-  });
-
+- content_for :scripts do
+  :javascript
+    $(document).ready(function(){
+      new stripeTest.Payment({
+        stripeKey: "#{STRIPE_PUBLIC_KEY}",
+        form: $('#payment-form')
+      });
+    });
 

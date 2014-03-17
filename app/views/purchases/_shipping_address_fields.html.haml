@@ -20,7 +20,9 @@
   %label Zip:
   = text_field_tag 'shipping_address[address_zip]', ''
 
-:javascript
-  $(document).ready(function(){
-  });
+- content_for :scripts do
+  :javascript
+    $(document).ready(function(){
+      new stripeTest.ShippingActivator($('#shipping-address'), $('#same_as_billing'))
+    });
 
