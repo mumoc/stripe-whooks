@@ -1,0 +1,14 @@
+!!!
+%html
+  %head
+    %meta{ content: 'text/html; charset=UTF-8', 'http-equiv' => 'Content-Type' }
+  %body
+    %h1
+      Hi, Thanks for using our service.
+
+    %h3 This is your receipt for: #{@charge.description}
+
+    %h2 Total: #{number_to_currency(@amount)}
+
+    %small If you have any question, please provide your receipt code: #{@charge.id}
+
