@@ -23,7 +23,7 @@ stripeTest.Payment = (->
     @disableSubmit false
 
   Payment::fadeRemoveError = ($error) ->
-    $error.fadeOut 5000, -> @.remove()
+    $error.fadeOut 5000, -> @remove()
 
   Payment::renderSuccess = (charge) ->
     charge.amount = (charge.amount/100).toFixed(2)
